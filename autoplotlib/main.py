@@ -33,7 +33,7 @@ def plot(
 
     if openai_api_key is None:
         try:
-            openai_api_key = os.environ["OPENAI_API_KEY"]
+            openai_api_key = os.environ.get('OPEN_AI_KEY')
         except KeyError:
             raise ValueError(
                 "You must provide an OpenAI API key. "
@@ -82,6 +82,8 @@ def plot(
 
     fig = plt.figure(**fig_args)
     # run the code
+    # for printing code
+    # print(code) 
     exec(code, {"data": data, "fig": fig})
 
     # return code, fig, llm_response

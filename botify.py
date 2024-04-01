@@ -17,7 +17,6 @@ console = Console()
 
 # Load environment variables from .env file
 load_dotenv()
-os.environ["OPENAI_API_KEY"] = "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"
 # Now you can access the variables as before
 azure_endpoint=os.environ.get('OPEN_AI_ENDPOINT')
 api_key=os.environ.get('OPEN_AI_KEY')
